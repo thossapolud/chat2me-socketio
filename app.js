@@ -7,6 +7,11 @@ app.get('/', function (req,res) {
     res.sendStatus(200);
 });
 
+app.get('/test', function (req,res) {
+    console.log('test');
+    res.sendStatus(200);
+});
+
 io.on('connection', function(socket) {
     console.log('A user connected');
 
