@@ -13,11 +13,13 @@ app.get('/test', function (req,res) {
 });
 
 io.on('connection', function(socket) {
-    console.log('A user connected');
+    // console.log('A user connected');
 
-    socket.on('disconected' , function(){
-        console.log('A user disconected');
-    });
+    // socket.on('disconected' , function(){
+    //     console.log('A user disconected');
+    // });
+
+    socket.send('test socket io');
 });
 
 http.listen(3000,function () {
