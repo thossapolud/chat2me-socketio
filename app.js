@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var port = process.env.PORT || 3000
 
 app.get('/', function (req,res) {
     console.log('connected');
@@ -25,6 +26,6 @@ io.on('connection', function(socket) {
 //     console.log('listening on port 3000');
 // });
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(port, function() {
+    console.log("App is running on port " + port);
   });
